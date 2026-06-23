@@ -1,0 +1,19 @@
+# Generated subdirectories
+/log/
+/results/
+/tmp_check/
+.deps/
+
+*.bc
+*.ll
+*.so
+*.dylib
+*.o
+*.a
+*.la
+*.lo
+*.dll
+*.res
+*.gcda
+*.gcno
+.DS_Store
