@@ -33,12 +33,11 @@ make install USE_PGXS=1 PG_CONFIG=/path/to/patched/pg_config
 
 Load the library via `shared_preload_libraries` on **both** the publisher and
 the subscriber (the hooks must be present in regular backends and in apply
-workers), and use `wal_level = logical`:
+workers).
 
 ```ini
 # postgresql.conf (publisher and subscriber)
 shared_preload_libraries = 'pg_logical_ddl'
-wal_level = logical
 ```
 
 On the **publisher**, choose which DDL to replicate with a comma-separated list
