@@ -175,8 +175,11 @@ pgld_message_handler(LogicalRepMessageData *msg)
 
 		if (GetSubscriptionRelState(MySubscription->oid, created_relid,
 									&sublsn) == SUBREL_STATE_UNKNOWN)
+		{
 			AddSubscriptionRelState(MySubscription->oid, created_relid,
 									SUBREL_STATE_SYNCDONE, msg->lsn, false);
+			CommandCounterIncrement();
+		}
 	}
 
 	PopActiveSnapshot();
